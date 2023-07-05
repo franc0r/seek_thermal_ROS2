@@ -16,23 +16,23 @@ git clone
 
 
 Build the library with Cmake
-source /opt/ros/<distro>/setup.bash
-cd ~/ros2_ws/src/seekthermal/build
-cmake ..
-make
-sudo make install
+$ source /opt/ros/<distro>/setup.bash
+$ cd ~/ros2_ws/src/seekthermal/build
+$ cmake ..
+$ make
+$ sudo make install
 
 
 Build the library with colcon to have access to the headers
-colcon build --packages-select seek_thermal
+$ colcon build --packages-select seek_thermal
 
 Build the ROS2 package
-source install/setup.bash
-colcon build --packages-select seekthermal_camera
+$ source install/setup.bash
+$ colcon build --packages-select seekthermal_camera
 
 Launch the package
-source install/setup.bash
-ros2 launch seekthermal_camera seekthermal_camera.launch.py
+$ source install/setup.bash
+$ ros2 launch seekthermal_camera seekthermal_camera.launch.py
 
 
 
