@@ -4,17 +4,6 @@ Based on [Seek Thermal userspace driver](https://github.com/CopterExpress/libsee
 
 This package provides a node for interfacing with the Seek Thermal and Seek Thermal Pro thermal cameras.
 
-## Setup
-
-In order to be able to run the driver as an unprivileged user, you need to set permissions for the camera device. This can be done automatically by copying the [`config/99-seekthermal.rules`](config/99-seekthermal.rules) file from the repository to `/etc/udev/rules.d` and running the following commands:
-
-```bash
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-```
-
-The user accessing the camera must be a member of `video` group.
-
 ## seekthermal_node
 
 The node interfaces with the camera using `libusb`. The node will publish raw sensor data (as provided by the device) and calculated temperature values in Kelvin. The node also utilizes [camera_info_manager](http://wiki.ros.org/camera_info_manager) for optical calibration data.
