@@ -1,4 +1,4 @@
-#seek_thermal
+# seek_thermal
 
 A modified version of the libseek_thermal_lite. It is adapted to work with ROS2 package seekthermal_camera.
 
