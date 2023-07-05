@@ -1,8 +1,8 @@
 # Seek Thermal/Seek Thermal Pro ROS driver
 
-Based on [Seek Thermal userspace driver](https://github.com/CopterExpress/libseek-thermal).
+Based on [Seek Thermal userspace driver](https://github.com/CopterExpress/libseek-thermal) and a modified version of [Seek Thermal ROS1 package](https://github.com/sfalexrog/seekthermal_camera/tree/master)
 
-This package provides a node and a nodelet for interfacing with the Seek Thermal and Seek Thermal Pro thermal cameras, as well as interface-compatible devices (like HTI-Xintai HT-201).
+This package provides a node for interfacing with the Seek Thermal and Seek Thermal Pro thermal cameras.
 
 ## Setup
 
@@ -42,10 +42,3 @@ The node interfaces with the camera using `libusb`. The node will publish raw se
 * `linear_k` (*float*, default: `-1.5276`) - linear model slope for device temperature compensation;
 * `linear_offset` (*float*, default: `-470.8979`) - linear model offset for device temperature compensation;
 
-### Flat field calibration
-
-The node can use [flat-field calibration](https://github.com/CopterExpress/libseek-thermal#apply-additional-flat-field-calibration) to reduce noise and offset radial gradients.
-
-## Nodelet
-
-The package also provides the `seekthermal_camera/camera` nodelet that has all functionality of the node.
