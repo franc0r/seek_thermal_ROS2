@@ -1,0 +1,7 @@
+/usr/local/include/seek_thermal/seek.h
+/usr/local/include/seek_thermal/SeekThermalPro.h
+/usr/local/include/seek_thermal/SeekCam.h
+/usr/local/include/seek_thermal/SeekLogging.h
+/usr/local/include/seek_thermal/SeekDevice.h
+/usr/local/include/seek_thermal/SeekThermal.h
+/usr/local/lib/libseek_thermal.so
