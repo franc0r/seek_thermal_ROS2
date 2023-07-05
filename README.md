@@ -74,7 +74,7 @@ file and replace the line find packageOpenCV 3 REQUIRED COMPONENTS by find packa
 
 
 ## Launch the node
-'''
+```
 source install/setup.bash
 ros2 launch seekthermal_camera seekthermal_camera.launch.py
-'''
+```
