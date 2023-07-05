@@ -33,11 +33,7 @@ colcon build --packages-select seek_thermal
 source install/setup.bash
 colcon build --packages-select seekthermal_camera
 ```
-- Launch the package
-```
-source install/setup.bash
-ros2 launch seekthermal_camera seekthermal_camera.launch.py
-```
+
 
 
 ## Setup
@@ -52,4 +48,33 @@ sudo udevadm trigger
 The user accessing the camera must be a member of `video` group.
 
 
+## How to correct installation issues :
+- I can’t build OpenCV3
+If you installed the stereo camera package, you installed CUDA. This software layer can cause you
+some troubles with OpenCV3 installation. To prevent it, you will need to add -DWITH CUDA = OFF
+when you are building your package. OpenCV3 will now be installed without using CUDA but it’s not
+mandatory and your package will work without it.
 
+- libjasper-dev is not found on my computer
+When you will install OpenCV3 you may have problems with the library libjasper-dev. If it’s the case,
+use this link to find solutions to your problem https://askubuntu.com/questions/1145811/
+error-installing-libjasper-dev-and-libpng12-package-in-ubuntu-19-04?rq=1
+
+
+- Even with this change I can’t build it
+Another problem we had when building OpenCV3 was the make command line which crashed dur-
+ing the process because we used too many threads. The computer we used had 24 threads, we had to only
+use 4 threads to make it compile properly: make -j4
+
+- I have a Cmakelist.txt problem
+You may also have a problem when compiling your seekthermal camera package because of your Cmake-
+list.txt. To prevent it, navigate to your package ¿ vendor ¿ libseekthermal lite ¿ Cmakelist.txt. Open this
+file and replace the line find packageOpenCV 3 REQUIRED COMPONENTS by find packageOpenCV
+3 REQUIRED
+
+
+## Launch the node
+'''
+source install/setup.bash
+ros2 launch seekthermal_camera seekthermal_camera.launch.py
+'''
