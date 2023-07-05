@@ -40,4 +40,16 @@ ros2 launch seekthermal_camera seekthermal_camera.launch.py
 ```
 
 
+## Setup
+
+In order to be able to run the driver as an unprivileged user, you need to set permissions for the camera device. This can be done automatically by copying the [`config/99-seekthermal.rules`](config/99-seekthermal.rules) file from the repository to `/etc/udev/rules.d` and running the following commands:
+
+```bash
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+The user accessing the camera must be a member of `video` group.
+
+
 
