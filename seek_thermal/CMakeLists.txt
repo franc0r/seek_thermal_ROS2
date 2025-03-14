@@ -13,8 +13,8 @@ else()
   message(FATAL_ERROR "Could not find libusb-1.0 development libraries")
 endif()
 
-# OpenCV 3+
-find_package(OpenCV 3 REQUIRED COMPONENTS core imgproc)
+# OpenCV
+find_package(OpenCV REQUIRED COMPONENTS core imgproc)
 
 add_library(seek_thermal SHARED
   src/SeekCam.cpp

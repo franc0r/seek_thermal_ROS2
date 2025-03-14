@@ -13,14 +13,14 @@ find_package(image_transport REQUIRED)
 find_package(OpenCV REQUIRED COMPONENTS imgproc) 
 find_package(sensor_msgs REQUIRED)
 find_package(camera_info_manager REQUIRED)
-find_library(seek_thermal REQUIRED)
+#find_library(seek_thermal REQUIRED)
 
 #These two lines need to be modified with your own path to the include and lib folder of your seek_thermal library's install. The common path looks like :
 #include_directories(/home/<name_user>/ros2_ws/install/seek_thermal/include)
 #include_directories(/home/<name_user>/ros2_ws/install/seek_thermal/lib)
 
-include_directories(/home/premovesim/ros2_ws/install/seek_thermal/include)
-include_directories(/home/premovesim/ros2_ws/install/seek_thermal/lib)
+include_directories(/home/ubuntu/ros2/dev_ws/install/seek_thermal/include)
+link_directories(/home/ubuntu/ros2/dev_ws/install/seek_thermal/lib)
 
 add_executable(seekthermal_node src/seekthermal_camera.cpp)
 target_link_libraries(seekthermal_node seek_thermal)
